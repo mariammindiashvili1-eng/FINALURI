@@ -545,7 +545,6 @@ footer {
 
 
 @media screen and (max-width: 420px) {
-    /* Header */
     header {
         padding: 15px 20px;
         width: 130%;
