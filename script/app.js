@@ -41,8 +41,6 @@ if (burger && nav) {
 
 
 
-
-
 const spellsContainer = document.getElementById('spells-grid');
 
 if (spellsContainer) {
@@ -79,12 +77,6 @@ if (spellsContainer) {
     }
     getSpells();
 }
-
-
-
-
-
-
 
 
 
@@ -158,13 +150,6 @@ function getCustomCookie(name) {
 
 
 
-
-
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
     
     if (getCustomCookie("hogwartsCookies") !== "accepted") {
@@ -183,5 +168,19 @@ document.addEventListener("DOMContentLoaded", () => {
             banner.remove(); 
         };
     }
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll("nav a, .nav-links a");
+    const currentUrl = window.location.href;
+    navLinks.forEach(link => {
+        
+        if (currentUrl.includes(link.getAttribute("href")) && link.getAttribute("href") !== "#" && link.getAttribute("href") !== "") {
+            link.classList.add("active-link"); 
+        }
+    });
 });
 
